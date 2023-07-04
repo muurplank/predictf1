@@ -21,19 +21,8 @@ export class App {
 
     //controller identifiers, add new controllers here
     static CONTROLLER_NAVBAR = "navbar";
-    static CONTROLLER_LOGINSITE = "loginsite"
-    static CONTROLLER_LOGOUT = "logout";
-    static CONTROLLER_FAQ = "faq";
-    static CONTROLLER_REGISTER = "register";
-    static CONTROLLER_ADMIN = "admin"
-    static CONTROLLER_AMBITION = "ambition"
     static CONTROLLER_DASHBOARD = "dashboard"
-    static CONTROLLER_ACCOUNTS = "accounts"
-    static CONTROLLER_SUBMITNEWSLETTER = "submitNewsletter";
     static CONTROLLER_FOOTER = "footer"
-    static CONTROLLER_NEWSLETTER = "newsletter"
-    static CONTROLLER_PARTNERS = "partners"
-    static CONTROLLER_SUBMITROADMAP = "submitRoadmap"
 
     constructor() {
         //Always load the navigation
@@ -68,69 +57,15 @@ export class App {
             case App.CONTROLLER_FOOTER:
                 new footerController();
                 return true;
-
-            case App.CONTROLLER_LOGOUT:
-                App.handleLogout();
-                return true;
         }
 
         //Otherwise, load any of the other controllers
         App.setCurrentController(name, controllerData);
         
         switch (name) {
-            // case App.CONTROLLER_ADMIN:
-            //     App.isLoggedIn(() => new adminController(), () => new LoginController());
-            //     break;
-            //
-            // case App.CONTROLLER_FAQ:
-            //     App.isLoggedIn(() => new faqController(), () => new faqController());
-            //     break;
-            //
-            // case App.CONTROLLER_AMBITION:
-            //     App.isLoggedIn(() => new RoadmapController(), () => new RoadmapController());
-            //     break;
-
             case App.CONTROLLER_DASHBOARD:
                 App.isLoggedIn(() => new DashboardController(), () => new DashboardController());
                 break;
-
-            // case App.CONTROLLER_ACCOUNTS:
-            //     App.isLoggedIn(() => new AccountsController(), () => new  LoginController());
-            //     break;
-            //
-            // case App.CONTROLLER_SUBMITNEWSLETTER:
-            //     App.isLoggedIn(() => new submitRoadmapController(), () => new LoginController());
-            //     break;
-            //
-            // case App.CONTROLLER_NEWSLETTER:
-            //     App.isLoggedIn(() => new NewsletterController(), () => new NewsletterController());
-            //     break;
-            //
-            // case App.CONTROLLER_REGISTER:
-            //     App.isLoggedIn(() => new registerController(), () => new LoginController())
-            //     break;
-            //
-            // case App.CONTROLLER_PARTNERS:
-            //     App.isLoggedIn(() => new PartnerController(), () => new PartnerController());
-            //     break;
-            //
-            // case App.CONTROLLER_LOGINSITE:
-            //     App.isLoggedIn(
-            //         () => {
-            //             this.handleLogout();
-            //             location.reload(); // Refresh the page so all the navbar items show
-            //         },
-            //         () => {
-            //             new LoginController();
-            //         }
-            //     );
-            //     break;
-            //
-            //
-            // case App.CONTROLLER_SUBMITROADMAP:
-            //     App.isLoggedIn(() => new submitRoadmapController(), () => new LoginController());
-            //
-            //     break;
 
             default:
                 return false;
