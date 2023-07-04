@@ -1,0 +1,11 @@
+{
+  "database": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "timeout": 30000,
+    "username": "root",
+    "password": "wachtwoord",
+    "database": "predictf1",
+    "connectionLimit": 1
+  }
+}

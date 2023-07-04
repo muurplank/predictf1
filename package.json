@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  },
+  "dependencies": {
+    "@cubejs-client/core": "^0.31.0",
+    "body-parser": "1.20.1",
+    "cypress": "^12.13.0",
+    "node-fetch": "^2.6.9"
+  }
+}

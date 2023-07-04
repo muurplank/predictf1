@@ -1,0 +1,28 @@
+main{
+    min-height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding-bottom: 340px;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.navbar {
+    background-color: #2F72B9;
+}
+
+.bd-navbar .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #cbbde2;
+}
+
+@media (max-width: 990px){
+    main{
+        padding-bottom: 132px;
+    }
+}
