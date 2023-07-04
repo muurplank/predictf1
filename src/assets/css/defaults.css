@@ -1,4 +1,14 @@
-.container {
-    background-color: black;
-    color: white;
+:root {
+    --f1-carbon-black: #15151E;
+    --f1-warm-red: #E10600;
+    --f1-light-carbon-black: #38383F;
+    --f1-gray: #737379;
+    --f1-high-vis: #FFFFFF;
+    --f1-off-white: #F9F4F1;
+    --f1-fastest-lap: #EA00F0;
+    --f1-personal-best: #00C900;
+}
+
+body {
+    background-color: var(--f1-off-white);
 }

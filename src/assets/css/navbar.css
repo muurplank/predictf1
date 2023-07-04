@@ -1,0 +1,26 @@
+.top-nav-bar {
+    display: flex;
+    justify-content: center;
+    background-color: var(--f1-carbon-black);
+    font-family: formula1display-regular, Arial, sans-serif;
+    color: white;
+    padding: 15px;
+}
+
+.second-nav-bar {
+    background-color: var(--f1-light-carbon-black);
+    color: var(--f1-off-white);
+    font-family: formula1display-regular, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 7px
+}
+
+.nav-title {
+    margin: 0;
+}
+
+.second-nav-title {
+    margin: 0;
+    padding-left: 10px;
+}
