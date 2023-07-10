@@ -10,7 +10,7 @@
 import {SessionManager } from "./framework/utils/sessionManager.js"
 import {NavbarController}  from "./controllers/navbarController.js"
 
-import {DashboardController} from "./controllers/dashboardController.js";
+import {LoginController} from "./controllers/loginController.js";
 
 import {footerController} from "./controllers/footerController.js";
 
@@ -64,7 +64,7 @@ export class App {
         
         switch (name) {
             case App.CONTROLLER_DASHBOARD:
-                App.isLoggedIn(() => new DashboardController(), () => new DashboardController());
+                App.isLoggedIn(() => new LoginController(), () => new LoginController());
                 break;
 
             default:

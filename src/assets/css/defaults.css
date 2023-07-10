@@ -12,3 +12,11 @@
 body {
     background-color: var(--f1-off-white);
 }
+
+.content {
+    display: grid;
+}
+
+.hidden {
+    display: none;
+}

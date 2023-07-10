@@ -1,0 +1,69 @@
+.log-in-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.log-in-title {
+    font-family: formula1display-wide, Arial, sans-serif;
+    color: var(--f1-carbon-black);
+    border-bottom: 1px solid var(--f1-gray);
+    width: 500px;
+    font-size: 40px;
+}
+
+.log-in-text {
+    font-family: formula1display-regular, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.log-in-form {
+    font-family: formula1display-regular, Arial, sans-serif;
+    background-color: var(--f1-off-white);
+    border: 1px solid var(--f1-carbon-black);
+    width: 500px;
+    border-radius: 8px;
+    height: 50px;
+    margin-top: -5px;
+    text-indent: 8px;
+}
+
+.log-in-form::placeholder {
+    padding-left: -8px;
+}
+
+#forgot-password {
+    font-family: formula1display-regular, Arial, sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+    width: 155px;
+    display: flex;
+    justify-content: end;
+}
+
+#forgot-password:hover {
+    border-bottom: 2px solid var(--f1-warm-red);
+    width: 155px;
+}
+
+.log-in-button {
+    display: flex;
+    background-color: var(--f1-warm-red);
+    width: 500px;
+    color: white;
+    align-content: center;
+    font-family: formula1display-wide, Arial, sans-serif, sans-serif;
+    font-size: 28px;
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input[type=text]:focus, input[type=password]:focus {
+    outline-color: var(--f1-warm-red);
+    color: var(--f1-gray);
+}
