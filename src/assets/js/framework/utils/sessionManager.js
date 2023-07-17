@@ -28,6 +28,7 @@ export class SessionManager {
 
      set(key, value) {
         this.#session[key] = value;
+        console.log(key + " set to: " + value)
 
         this.#saveSession();
     }

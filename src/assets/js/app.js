@@ -9,19 +9,19 @@
 
 import {SessionManager } from "./framework/utils/sessionManager.js"
 import {NavbarController}  from "./controllers/navbarController.js"
-
 import {LoginController} from "./controllers/loginController.js";
-
 import {footerController} from "./controllers/footerController.js";
+import {AllLeaguesController} from "./controllers/allLeaguesController.js";
 
 export class App {
-    //we only need one instance of the sessionManager, thus static use here
+    // we only need one instance of the sessionManager, thus static use here
     // all classes should use this instance of sessionManager
     static sessionManager = new SessionManager();
 
     //controller identifiers, add new controllers here
     static CONTROLLER_NAVBAR = "navbar";
-    static CONTROLLER_DASHBOARD = "dashboard"
+    static CONTROLLER_LOGIN = "login"
+    static CONTROLLER_ALLLEAGUES = "allLeagues"
     static CONTROLLER_FOOTER = "footer"
 
     constructor() {
@@ -29,7 +29,7 @@ export class App {
         App.loadController(App.CONTROLLER_NAVBAR);
 
         //Attempt to load the controller from the URL, if it fails, fall back to the welcome controller.
-        App.loadControllerFromUrl(App.CONTROLLER_DASHBOARD);
+        App.loadControllerFromUrl(App.CONTROLLER_LOGIN);
 
         App.loadController(App.CONTROLLER_FOOTER)
     }
@@ -63,8 +63,12 @@ export class App {
         App.setCurrentController(name, controllerData);
         
         switch (name) {
-            case App.CONTROLLER_DASHBOARD:
+            case App.CONTROLLER_LOGIN:
                 App.isLoggedIn(() => new LoginController(), () => new LoginController());
+                break;
+
+            case App.CONTROLLER_ALLLEAGUES:
+                App.isLoggedIn(() => new AllLeaguesController(), () => new LoginController() )
                 break;
 
             default:
@@ -145,7 +149,7 @@ export class App {
      * @param whenNo - function to execute when user is logged in
      */
     static isLoggedIn(whenYes, whenNo) {
-        if (App.sessionManager.get("username")) {
+        if (App.sessionManager.get("userid")) {
             whenYes();
         } else {
             whenNo();
@@ -159,13 +163,13 @@ export class App {
         App.sessionManager.remove("username");
 
         //go to login screen
-        App.loadController(App.CONTROLLER_DASHBOARD);
+        App.loadController(App.CONTROLLER_LOGIN);
     }
 }
 
 window.addEventListener("hashchange", function() {
     App.dontSetCurrentController = true;
-    App.loadControllerFromUrl(App.CONTROLLER_DASHBOARD);
+    App.loadControllerFromUrl(App.CONTROLLER_LOGIN);
     App.dontSetCurrentController = false;
 });
 

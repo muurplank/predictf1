@@ -1,0 +1,62 @@
+.content-title {
+    font-family: formula1display-bold, Arial, sans-serif, Arial, sans-serif;
+    color: var(--f1-carbon-black);
+    border-bottom: 1px solid var(--f1-gray);
+    width: 900px;
+    font-size: 35px;
+    display: flex;
+    flex-direction: row;
+}
+
+.league-card {
+    display: flex;
+    flex-direction: column;
+    border: var(--f1-carbon-black) 1px solid;
+    border-radius: 20px;
+    width: 250px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.league-card-text-container {
+    margin-top: -3px;
+    background-color: var(--f1-carbon-black);
+    color: var(--f1-off-white);
+    width: 249px;
+    padding-left: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom: 1px solid var(--f1-gray);
+    padding-bottom: 10px;
+    padding-top: 5px;
+    margin-bottom: -2px;
+}
+
+.cards-container {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 900px;
+    flex-wrap: wrap;
+}
+
+.league-card-title {
+    color: var(--f1-off-white);
+    font-family: formula1display-bold, Arial, sans-serif;
+}
+
+.league-card-player-amount {
+    color: var(--f1-light-carbon-black);
+    font-family: formula1display-regular, Arial, sans-serif, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.content-title-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#league-amount {
+    color: var(--f1-warm-red);
+}

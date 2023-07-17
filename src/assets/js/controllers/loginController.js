@@ -14,14 +14,17 @@ export class LoginController extends Controller {
 
     constructor() {
         super();
+
+        this.#loginRepository = new LoginRepository();
+        this.#sessionManager = new SessionManager();
+
         this.#setupView();
     }
 
     async #setupView() {
         // loads in the correct html files and creates the repository
         this.#loginView = await super.loadHtmlIntoContent("html_views/login.html")
-        this.#loginRepository = new LoginRepository();
-        this.#sessionManager = new SessionManager();
+
 
         this.#loginView.querySelector("#log-in-button").addEventListener("click", () => {
             this.#login()
@@ -43,7 +46,7 @@ export class LoginController extends Controller {
             // user id: r.data[0].userid
             if(r.data.length === 1) {
                 let userId = r.data[0].userid
-                this.#sessionManager.set(userId)
+                this.#sessionManager.set("userid", userId)
             } else {
                 errorBox.innerText = "Password or username incorrect"
                 errorBox.classList.remove("hidden")

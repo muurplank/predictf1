@@ -13,6 +13,10 @@ body {
     background-color: var(--f1-off-white);
 }
 
+p {
+    margin-bottom: 0;
+}
+
 .content {
     display: grid;
 }
